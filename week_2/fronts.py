@@ -23,6 +23,16 @@ class Sll:
         removed_node.next = None
         return self.head
 
+    def add_back(self, new_node):
+        if self.head == None:
+            self.head = new_node
+            return self
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+        current_node.next = new_node
+        return self
+        
 my_sll = Sll()
 print(my_sll.head)
 node_1 = Node(20)
