@@ -1,41 +1,4 @@
 // # Fronts
-class Node{
-    constructor(val){
-        this.value = val;
-        this.next = null;
-    }
-}
-
-class Sll{
-    constructor(){
-        this.head = null;
-    }
-    
-    addFront(value){
-        var newNode = new SLLNode(value);
-        newNode.next = this.head;
-    }
-}
-    
-    def remove_front(self):
-        if self.head == None:
-            return self.head
-        removed_node = self.head
-        self.head = removed_node.next
-        removed_node.next = None
-        return self.head
-
-my_sll = Sll()
-print(my_sll.head)
-node_1 = Node(20)
-node_2 = Node(17)
-node_3 = Node(1000)
-
-my_sll.add_front(node_1)
-print(my_sll)
-# my_sll.add_front(node_2)
-# my_sll.add_front(node_3)
-print(my_sll.head.value)
 
 // '''Front
 // Write a method to return the value (not the node) at the head of the list. If the list is empty, return null.'''
@@ -52,3 +15,34 @@ print(my_sll.head.value)
 // '''Bonus
 // Add to Back
 // Write a method that accepts a value and create a new node, assign it to the end of the list'''
+
+class Node{
+    constructor(val){
+        this.value = val;
+        this.next = null;
+    }
+}
+
+class Sll{
+    constructor(){
+        this.head = null;
+    }
+    
+    addFront(value){
+        var newNode = new Node(value);
+        newNode.next = this.head;
+        this.head = newNode;
+        return this.head
+    }
+}
+
+var my_sll = new Sll()
+console.log(my_sll.head)
+// node_1 = Node(20)
+// node_2 = Node(17)
+// node_3 = Node(1000)
+
+my_sll.addFront(20)
+my_sll.addFront(17)
+my_sll.addFront(1000)
+console.log(my_sll)

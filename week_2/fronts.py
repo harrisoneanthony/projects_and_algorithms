@@ -45,11 +45,6 @@ Write a method to remove the head node and return the new list head node. If the
 '''Add Front
 Write a method that accepts a value and create a new node, assign it to the list head, and return a pointer to the new head node.'''
 
-# class SLL {
-#      // constructor, other methods, removed for brevity
-#     addFront(value) {
-#     }
-# }
 
 '''Bonus
 Add to Back
