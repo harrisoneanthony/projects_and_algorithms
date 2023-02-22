@@ -22,20 +22,22 @@ class Bst:
                     monkey = monkey.right
                 else:
                     monkey.right = new_node
+                    return self
             else:
                 if monkey.left != None:
                     monkey = monkey.left
                 else:
                     monkey.left = new_node
-            return self
+                    return self
+        return self
 
 
 # BST: Contains
 # # Create a contains(val) method on BST that returns whether the tree contains a given value. Take advantage of the BST structure to make this a much more rapid operation than SList.contains() would be.
     def contains(self, node_check):
+        monkey = self.root
         if self.root == None:
             return False
-        monkey = self.root
         while monkey:
             if node_check.value == monkey.value:
                 return True
@@ -59,7 +61,7 @@ class Bst:
         minimum = self.root.value
         while monkey.left:
             if monkey.left.value < minimum:
-                min = monkey.left.value
+                minimum = monkey.left.value
             monkey = monkey.left
         return minimum
 
@@ -98,4 +100,4 @@ print(my_bst.contains(Node(88)))
 print(my_bst.contains(Node(9)))
 print(my_bst.contains(Node(99)))
 print(my_bst.contains(Node(16)))
-# print(my_bst.min_value())
+print(my_bst.min_value())
