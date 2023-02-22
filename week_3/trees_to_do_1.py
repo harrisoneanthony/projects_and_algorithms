@@ -68,12 +68,36 @@ class Bst:
 
 # BST: Max
 # Create a max() BST method that returns the largest value contained in the binary search tree.
+    def max_value(self):
+        if self.root == None:
+            print("Your tree is empty")
+            return self
+        monkey = self. root
+        maximum = self.root.value
+        while monkey.right:
+            if monkey.right.value > maximum:
+                maximum = monkey.right.value
+            monkey = monkey.right
+        return maximum
 
 # BONUS: BST: Size 
 # Write a size() method that returns the number of nodes (values) contained in the tree.
+    def size(self):
+        if self.root == None:
+            return "The tree is empty"
+        def bst_size(monkey):
+            if monkey == None:
+                return 0
+            return 1 + bst_size(monkey.left) + bst_size(monkey.right)
+        return bst_size(self.root)
 
 # BONUS: BST: Is Empty
 # Create an isEmpty() method to return whether the BST is empty (whether it contains no values).
+    def is_empty(self):
+        if self.root is None:
+            return True
+        return False
+    
 my_bst = Bst()
 
 node1 = Node(45)
@@ -101,3 +125,6 @@ print(my_bst.contains(Node(9)))
 print(my_bst.contains(Node(99)))
 print(my_bst.contains(Node(16)))
 print(my_bst.min_value())
+print(my_bst.max_value())
+print(my_bst.size())
+print(my_bst.is_empty())
