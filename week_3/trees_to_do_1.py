@@ -40,16 +40,14 @@ class Bst:
             if node_check.value == monkey.value:
                 return True
             elif node_check.value > monkey.value:
-                if monkey.right != None:
-                    monkey = monkey.right
-                    if monkey.value == node_check.value:
-                        return True
+                monkey = monkey.right
+                if monkey == node_check:
+                    return True
             else:
-                if monkey.left != None:
-                    monkey = monkey.left
-                    if monkey == node_check.value:
-                        return True
-            return False
+                monkey = monkey.left
+                if monkey == node_check:
+                    return True
+        return False
 
 # BST: Min
 # Create a min() method on the BST class that returns the smallest value found in the BST.
@@ -58,11 +56,12 @@ class Bst:
             print("Your tree is empty")
             return self
         monkey = self.root
-        while monkey:
-            if monkey.left == None:
-                monkey = monkey.right
+        minimum = self.root.value
+        while monkey.left:
+            if monkey.left.value < minimum:
+                min = monkey.left.value
             monkey = monkey.left
-            return monkey.value
+        return minimum
 
 
 # BST: Max
@@ -80,7 +79,7 @@ node2 = Node(15)
 node3 = Node(88)
 node4 = Node(9)
 node5 = Node(99)
-node6 = Node(3)
+node6 = Node(16)
 
 my_bst.add(node1)
 my_bst.add(node2)
@@ -92,6 +91,11 @@ my_bst.add(node6)
 # print(my_bst.root.value)
 # print(my_bst.root.left.value)
 # print(my_bst.root.right.value)
+print(my_bst.contains(Node(45)))
+print(my_bst.contains(Node(12)))
+print(my_bst.contains(Node(15)))
 print(my_bst.contains(Node(88)))
+print(my_bst.contains(Node(9)))
 print(my_bst.contains(Node(99)))
+print(my_bst.contains(Node(16)))
 # print(my_bst.min_value())
