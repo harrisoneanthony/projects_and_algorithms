@@ -25,6 +25,7 @@ class Sll:
 # SList: Add Back    
 # adds a value to the vack of the list
     def add_back(self, new_node):
+        print(new_node.value)
         if self.head == None:
             self.head = new_node
             return self
@@ -66,6 +67,7 @@ class Sll:
             return "This SLL is currently empty, try adding a node with add_front"
         runner = self.head
         while runner:
+            print(runner.value)
             my_list += f"{runner.value} "
             runner = runner.next
         return my_list
@@ -144,8 +146,8 @@ node_2 = Node(17)
 node_3 = Node(1000)
 node_4 = Node(1)
 
-my_sll.add_front(node_1)
-my_sll.add_front(node_2)
+# my_sll.add_front(node_1)
+# my_sll.add_front(node_2)
 
 my_sll3.add_back(node_3)
 my_sll3.add_back(node_4)
@@ -154,12 +156,12 @@ my_sll3.add_back(node_2)
 
 # my_sll2.display_values()
 # my_sll.display_values()
-print(my_sll.contains(20))
-print(my_sll3.length())
-print(my_sll.display_values())
-print(my_sll2.display_values())
+# print(my_sll.contains(20))
+# print(my_sll3.length())
+# print(my_sll.display_values())
+# print(my_sll2.display_values())
 print(my_sll3.display_values())
-print(my_sll3.find_max())
-print(my_sll3.find_min())
-print(my_sll3.average())
-print(my_sll3.move_min_to_front())
+# print(my_sll3.find_max())
+# print(my_sll3.find_min())
+# print(my_sll3.average())
+# print(my_sll3.move_min_to_front())
