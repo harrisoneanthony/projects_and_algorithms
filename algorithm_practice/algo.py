@@ -11,7 +11,7 @@ def sort_num(nums):
                 nums[i], nums[j] = nums[j], nums[i]
     return nums
 
-print(sort_num([1,2,3,10,5]))
+# print(sort_num([1,2,3,10,5]))
 # sort_num([1,2,3,10,5]) # should return [1,2,3,5,10]
 # sort_num(None) # should return []
 
@@ -35,7 +35,7 @@ def my_friends(input):
             friends_list.append(i)
     return friends_list
 
-print(my_friends(["Ryan", "Kieran", "Jason", "Yous"]))
+# print(my_friends(["Ryan", "Kieran", "Jason", "Yous"]))
 
 
 
@@ -65,11 +65,66 @@ def round_to_fives(input):
     multiple = input/5
     return 5 * (math.ceil(multiple))
 
-print(round_to_fives(0))
-print(round_to_fives(2))
-print(round_to_fives(3))
-print(round_to_fives(12))
-print(round_to_fives(21))
-print(round_to_fives(30))
-print(round_to_fives(-2))
-print(round_to_fives(-5))
+# def round_to_fives(input):
+    # return input + (5 - input) % 5
+
+# print(round_to_fives(0))
+# print(round_to_fives(2))
+# print(round_to_fives(3))
+# print(round_to_fives(12))
+# print(round_to_fives(21))
+# print(round_to_fives(30))
+# print(round_to_fives(-2))
+# print(round_to_fives(-5))
+
+'''In some scripting languages like PHP, there exists a logical operator (e.g. &&, ||, and, or, etc.) called the "Exclusive Or" (hence the name of this Kata). The exclusive or evaluates two booleans. It then returns true if exactly one of the two expressions are true, false otherwise. For example:
+
+false xor false == false // since both are false
+true xor false == true // exactly one of the two expressions are true
+false xor true == true // exactly one of the two expressions are true
+true xor true == false // Both are true.  "xor" only returns true if EXACTLY one of the two expressions evaluate to true.
+Task
+Since we cannot define keywords in Javascript (well, at least I don't know how to do it), your task is to define a function xor(a, b) where a and b are the two expressions to be evaluated. Your xor function should have the behaviour described above, returning true if exactly one of the two expressions evaluate to true, false otherwise.'''
+
+def xor(a,b):
+    return a != b
+
+# print(xor(True, True))
+# print(xor(False, True))
+# print(xor(True, False))
+# print(xor(False, False))
+
+
+
+'''Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+The four operators are "add", "subtract", "divide", "multiply".
+A few examples:(Input1, Input2, Input3 --> Output)
+
+5, 2, "add"      --> 7
+5, 2, "subtract" --> 3
+5, 2, "multiply" --> 10
+5, 2, "divide"   --> 2.5'''
+
+def arithmetic_operator(a,b,operator):
+    if operator == "add":
+        return a+b
+    if operator == "subtract":
+        return a-b
+    if operator == "multiply":
+        return a*b
+    if operator == "divide":
+        return a/b
+
+def arithmetic_operator(a, b, operator):
+    return {
+        'add': a + b,
+        'subtract': a - b,
+        'multiply': a * b,
+        'divide': a / b,
+    }[operator]
+
+# print(arithmetic_operator(5,2,"add"))
+# print(arithmetic_operator(5,2,"subtract"))
+# print(arithmetic_operator(5,2,"multiply"))
+# print(arithmetic_operator(5,2,"divide"))
