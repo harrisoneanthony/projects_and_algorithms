@@ -128,3 +128,21 @@ def arithmetic_operator(a, b, operator):
 # print(arithmetic_operator(5,2,"subtract"))
 # print(arithmetic_operator(5,2,"multiply"))
 # print(arithmetic_operator(5,2,"divide"))
+
+
+
+# '''Create a combat function that takes the player's current health and the amount of damage recieved, and returns the player's new health. Health can't be less than 0.'''
+
+def combat(health, damage):
+    if health - damage < 0:
+        return 0
+    else:
+        return health-damage
+    
+def combat(health, damage):
+    return max(0, health-damage)
+
+# print(combat(100, 5))
+# print(combat(83, 16))
+# print(combat(20, 30))
+
