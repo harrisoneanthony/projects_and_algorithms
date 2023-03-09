@@ -148,20 +148,40 @@ def combat(health, damage):
 
 
 
-'''Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+'''Unique in order:
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
 
 For example:
 
 unique_in_order('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
 unique_in_order('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
-unique_in_order([1, 2, 2, 3, 3])   == [1, 2, 3]
-unique_in_order((1, 2, 2, 3, 3))   == [1, 2, 3]'''
+unique_in_order([1, 2, 2, 3, 3])   == [1, 2, 3]'''
 
 
-def unique_in_order(input):
-
+def unique_in_order(sequence):
+    if not sequence:
+        return []
+    result =[sequence[0]]
+    prev=sequence[0]
+    for i in range(len(sequence)):
+        if sequence[i] != prev:
+            result.append(sequence[i])
+        prev = sequence[i]
     return result
 print(unique_in_order('AAAABBBCCDAABBB'))
 print(unique_in_order('ABBCcAD'))
 print(unique_in_order([1,2,2,3,3]))
-print(unique_in_order((1,2,2,3,3)))
+
+
+
+""" Your order, please
+
+Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+Examples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"""
