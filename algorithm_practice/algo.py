@@ -168,9 +168,9 @@ def unique_in_order(sequence):
             result.append(sequence[i])
         prev = sequence[i]
     return result
-print(unique_in_order('AAAABBBCCDAABBB'))
-print(unique_in_order('ABBCcAD'))
-print(unique_in_order([1,2,2,3,3]))
+# print(unique_in_order('AAAABBBCCDAABBB'))
+# print(unique_in_order('ABBCcAD'))
+# print(unique_in_order([1,2,2,3,3]))
 
 
 
@@ -185,3 +185,18 @@ If the input string is empty, return an empty string. The words in the input Str
 Examples
 "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
 "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"""
+
+def your_order(input):
+    sentence= input.split()
+    result=[''] * len(sentence)
+    for i in sentence:
+        for x in i:
+            try:
+                a = int(x)
+                result[a-1]=i
+            except ValueError:
+                pass
+    return " ".join(result)
+
+print(your_order("is2 Thi1s T4est 3a"))
+print(your_order("4of Fo1r pe6ople g3ood th5e the2"))
