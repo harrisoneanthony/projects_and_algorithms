@@ -198,5 +198,110 @@ def your_order(input):
                 pass
     return " ".join(result)
 
-print(your_order("is2 Thi1s T4est 3a"))
-print(your_order("4of Fo1r pe6ople g3ood th5e the2"))
+# print(your_order("is2 Thi1s T4est 3a"))
+# print(your_order("4of Fo1r pe6ople g3ood th5e the2"))
+
+
+# jumps in a cycle
+
+def get_jumps(cycle_list, k):
+    l = a = len(cycle_list)
+    while a != k:
+        if a > k:
+            a = a - k
+        else:
+            k = k - a
+    return l/k
+# print(get_jumps([1,5,7,8,9], 1))
+# print(get_jumps([1,5,7,8,9], 2))
+
+
+# Kooka Counter
+'''A family of kookaburras are in my backyard.
+
+I can't see them all, but I can hear them!
+
+How many kookaburras are there?
+
+Hint
+The trick to counting kookaburras is to listen carefully
+
+The males sound like HaHaHa...
+
+The females sound like hahaha...
+
+And they always alternate male/female
+
+Examples
+ha = female => 1
+Ha = male => 1
+Haha = male + female => 2
+haHa = female + male => 2
+hahahahaha = female => 1
+hahahahahaHaHaHa = female + male => 2
+HaHaHahahaHaHa = male + female + male => 3'''
+
+def kooka_counter(laughing):
+    if not laughing:
+        return 0
+    count = 1
+    last_h = laughing[0]
+    for i in range(0,len(laughing),2):
+        if last_h != laughing[i]:
+            count +=1
+            last_h = laughing[i]
+    return count
+
+# print(kooka_counter('ha'))
+# print(kooka_counter('Ha'))
+# print(kooka_counter('Haha'))
+# print(kooka_counter('haHa'))
+# print(kooka_counter('hahahaha'))
+# print(kooka_counter('hahahahaHaHaHa'))
+# print(kooka_counter('HaHaHaHaHaHa'))
+
+
+
+# Cantor's Pairing function
+'''Georg Cantor's in one of his proofs used following sequence:
+
+1/1 1/2 1/3 1/4 1/5 ... 
+2/1 2/2 2/3 2/4 ...
+3/1 3/2 3/3 ... 
+4/1 4/2 ... 
+5/1 ... 
+There are many ways to order those expressions. In this kata we'll use this approach:
+
+
+
+So sequence is:
+
+1/1, 1/2, 2/1, 3/1, 2/2, 1/3, 1/4 ...
+Your task is to return nth element of this sequence.
+
+Input: n - positive integer (max 268435455)
+
+Output: string - nth expression of sequence - 'a/b' where a and b are integers.'''
+
+
+def cantor(n : int) -> str:
+    if n == 1:
+        return '1/1'
+    else:
+        k = 1
+        while n > k:
+            n -= k
+            k += 1
+            print(n,k)
+        if k % 2 == 0:
+            return str(n) + '/' + str(k-n+1)
+        else:
+            return str(k-n+1) + '/' + str(n)
+
+# print(cantor(1))
+# print(cantor(2))
+# print(cantor(3))
+# print(cantor(4))
+# print(cantor(5))
+print(cantor(7))
+
