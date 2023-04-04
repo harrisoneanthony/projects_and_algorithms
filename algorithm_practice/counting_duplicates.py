@@ -16,6 +16,8 @@ def duplicate_count(text):
     count = {}
     dups = 0
     input = text.lower()
+    if input == '':
+        return 0
     for char in input:
         if char in count:
             count[char] += 1
@@ -24,15 +26,18 @@ def duplicate_count(text):
     for key in count:
         if count[key] > 1:
             dups += 1
-        else:
-            return 0
-        return dups
+    if count[key] < 1:
+        return 0
+    return dups
 
 
 print(duplicate_count('abcde'))
-# print(duplicate_count('aabbcde'))
+print(duplicate_count('aabbcde'))
 print(duplicate_count('aabBcde'))
-# print(duplicate_count('indivisibility'))
+print(duplicate_count('indivisibility'))
 print(duplicate_count('Indivisibilities'))
-# print(duplicate_count('aA11'))
-# print(duplicate_count('ABBA'))
+print(duplicate_count('aA11'))
+print(duplicate_count('ABBA'))
+
+def duplicate_count(s):
+    return len([c for c in set(s.lower()) if s.lower().count(c)>1])
