@@ -54,6 +54,7 @@ def direction_in_grid(rows,cols):
             return "L"
         else:
             return "R"
+        
 
 print(direction_in_grid(1,1))
 print(direction_in_grid(2,2))
@@ -64,3 +65,10 @@ print(direction_in_grid(3,2))
 print(direction_in_grid(3,3))
 print(direction_in_grid(3,4))
 print(direction_in_grid(3,5))
+
+'''def direction_in_grid(n, m):
+    return "LR"[n%2] if m >= n else "UD"[m%2]'''
+
+'''The function first checks if the value of m is greater than or equal to n. If it is, the direction of movement is horizontal, and the function returns the character "L" or "R" based on whether n is even or odd. Specifically, it returns "L" if n is even, and "R" if n is odd. This is achieved by using the modulo operator % to determine the remainder when n is divided by 2, and then indexing the string "LR" with the result.
+
+If m is less than n, the direction of movement is vertical, and the function returns the character "U" or "D" based on whether m is even or odd. This is achieved in a similar way to the horizontal case, by indexing the string "UD" with the result of m modulo 2. Specifically, it returns "U" if m is even, and "D" if m is odd.'''
