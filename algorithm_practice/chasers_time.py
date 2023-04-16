@@ -43,11 +43,21 @@ Where:
 - S: Sprint
 Based on above sequences, the maximum possible distance d is 10.'''
 
-
+import math
 def solution(s, t):
-    if s == 2:
+    if s ==2:
         return 10
-    return ((s+1)*s)-1 + (t-(s-1))*s
-
-
+    steps = math.floor(s/3)*2+1
+    if steps > t:
+        steps =t
+    distance = (t-steps)*s
+    print("steps",steps, "and time",t)
+    for i in range(1,steps+1):
+        print(i, "distance", distance, "speed",s)
+        if i %2 !=0:
+            distance += 2*s
+            s -=1
+        else:
+            distance += s
+    return distance
 print(solution(2,4))
