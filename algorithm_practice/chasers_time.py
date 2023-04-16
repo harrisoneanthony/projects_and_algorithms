@@ -54,10 +54,22 @@ def solution(s, t):
     print("steps",steps, "and time",t)
     for i in range(1,steps+1):
         print(i, "distance", distance, "speed",s)
-        if i %2 !=0:
-            distance += 2*s
-            s -=1
+        if steps == t and steps % 2 ==0:
+            if i %2 !=0:
+                distance += s
+            else:
+                distance += 2*s
+                s -=1
         else:
-            distance += s
+            if i %2 !=0:
+                distance += 2*s
+                s -=1
+            else:
+                distance += s
     return distance
+
 print(solution(2,4))
+
+# def solution(s, t):
+#     n = min((t-1)//2, s//3)
+#     return t*s + (n+1)*s - 3*(n+1)*n//2 if t else 0
