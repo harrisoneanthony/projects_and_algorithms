@@ -9,10 +9,10 @@ NOTE: All numbers will be whole numbers greater than 0.
 '''
 
 def expanded_form(num):
-    answer =[]
-    for i in range(len(str(num))):
-        if str(num)[i] != '0':
-            answer.append(f"{str(num)[i]}{'0'*(len(str(num))-i-1)}")
+    answer,num =[], str(num)
+    for i in range(len(num)):
+        if num[i] != '0':
+            answer.append(f"{num[i]}{'0'*(len(num)-i-1)}")
     return " + ".join(answer)
 
 print(expanded_form(12))
