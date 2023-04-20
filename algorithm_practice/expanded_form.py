@@ -18,3 +18,7 @@ def expanded_form(num):
 print(expanded_form(12))
 print(expanded_form(42))
 print(expanded_form(70304))
+
+'''def expanded_form(num):
+    num = list(str(num))
+    return ' + '.join(x + '0' * (len(num) - y - 1) for y,x in enumerate(num) if x != '0')'''
