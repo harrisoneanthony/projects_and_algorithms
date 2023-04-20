@@ -8,17 +8,17 @@ NOTE: All numbers will be whole numbers greater than 0.
 
 '''
 
+# def expanded_form(num):
+#     answer,num =[], str(num)
+#     for i in range(len(num)):
+#         if num[i] != '0':
+#             answer.append(f"{num[i]}{'0'*(len(num)-i-1)}")
+#     return " + ".join(answer)
+
+
 def expanded_form(num):
-    answer,num =[], str(num)
-    for i in range(len(num)):
-        if num[i] != '0':
-            answer.append(f"{num[i]}{'0'*(len(num)-i-1)}")
-    return " + ".join(answer)
+    return ' + '.join(x + '0' * (len(str(num)) - y - 1) for y,x in enumerate(str(num)) if x != '0')
 
 print(expanded_form(12))
 print(expanded_form(42))
 print(expanded_form(70304))
-
-'''def expanded_form(num):
-    num = list(str(num))
-    return ' + '.join(x + '0' * (len(num) - y - 1) for y,x in enumerate(num) if x != '0')'''
