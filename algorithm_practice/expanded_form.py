@@ -22,3 +22,8 @@ def expanded_form(num):
 print(expanded_form(12))
 print(expanded_form(42))
 print(expanded_form(70304))
+
+def my_func(f, arg):
+    return f(arg)
+
+my_func(lambda x: 2*x*x, 5)
