@@ -139,3 +139,35 @@ SyntaxError: the code can't be parsed properly;
 TypeError: a function is called on a value of an inappropriate type;
 
 ValueError: a function is called on a value of the correct type, but with an inappropriate value.'''
+
+# try:
+#     meaning = 42
+#     print(meaning / 0)
+#     print("the meaning of life")
+# except (ValueError, TypeError):
+#     print("ValueError or TypeError occurred")
+# except ZeroDivisionError:
+#     print("Divided by zero")
+
+# try:
+#     print(1)
+#     print(1 + "1" == 2)
+#     print(2)
+# except TypeError:
+#     print(3)
+# else:
+#     print(4)
+
+x = 0
+try:
+  x+=1
+  raise ValueError
+except NameError:
+  x+=1
+except ValueError:
+  x+=1
+else:
+  x+=1
+finally:
+  x+=1
+  print(x)
